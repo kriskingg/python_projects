@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove Duplicates</title>
-    <!-- Bootstrap CSS -->
+    <title>Instructions - Remove Duplicates</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,7 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/instructions">Instructions</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/instructions">Instructions</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                 </ul>
             </div>
@@ -25,31 +24,19 @@
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Remove Duplicates</h1>
-
-        <!-- Upload Section -->
-        <div class="card mb-5">
-            <div class="card-header bg-primary text-white">Upload a CSV File</div>
-            <div class="card-body">
-                <form action="/upload" method="post" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <input type="file" name="file" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-success">Upload and Process</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Text Input Section -->
+        <h1 class="text-center mb-4">Instructions</h1>
         <div class="card">
-            <div class="card-header bg-secondary text-white">Enter CSV Data Directly</div>
             <div class="card-body">
-                <form action="/process_text" method="post">
-                    <div class="mb-3">
-                        <textarea name="text" rows="6" class="form-control" placeholder="Paste your CSV data here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-warning">Process Text</button>
-                </form>
+                <ol>
+                    <li>Go to the home page and choose one of the options:</li>
+                    <ul>
+                        <li>Upload a CSV file.</li>
+                        <li>Paste raw text into the text box.</li>
+                    </ul>
+                    <li>Click "Upload and Process" or "Process Text" depending on the chosen method.</li>
+                    <li>Download the deduplicated file or copy the results.</li>
+                </ol>
+                <p class="text-muted">Note: Ensure your CSV data is formatted correctly before uploading or pasting.</p>
             </div>
         </div>
     </div>
@@ -58,7 +45,6 @@
         <p>&copy; 2024 Remove Duplicates Tool</p>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
