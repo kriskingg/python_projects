@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructions - Remove Duplicates</title>
+    <title>Instructions | Remove Duplicates</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -24,29 +25,21 @@
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Instructions</h1>
-        <div class="card">
+        <h1 class="text-center mb-4">How to Use the Remove Duplicates Tool</h1>
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-white">1. Upload a CSV File</div>
             <div class="card-body">
-                <h3>Steps to Use the Tool</h3>
-                <ol>
-                    <li>Navigate to the Home page.</li>
-                    <li>
-                        You have two options:
-                        <ul>
-                            <li>Upload a CSV file using the "Choose File" button.</li>
-                            <li>Paste CSV-formatted text directly into the provided text box.</li>
-                        </ul>
-                    </li>
-                    <li>Click "Upload and Process" or "Process Text."</li>
-                    <li>Once processed:
-                        <ul>
-                            <li>For file upload, a download link for the deduplicated file will be provided.</li>
-                            <li>For text input, deduplicated text will be displayed, and you can download it as a CSV.</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p class="text-muted">Note: Ensure your CSV data is formatted correctly before uploading or pasting.</p>
+                <p>Click on the "Choose File" button, select your CSV file, and then click "Upload and Process." The system will automatically remove duplicates and provide you with a deduplicated file to download.</p>
             </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header bg-secondary text-white">2. Paste CSV Data Directly</div>
+            <div class="card-body">
+                <p>Paste your CSV data into the text box provided under "Paste Text to Remove Duplicates" and click "Process Text." You will see the deduplicated data on the next page, with an option to download it as a CSV file.</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Go Back to Home</a>
         </div>
     </div>
 
@@ -54,6 +47,7 @@
         <p>&copy; 2024 Remove Duplicates Tool</p>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
