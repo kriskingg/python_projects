@@ -13,7 +13,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/')
 def index():
-    """Render the upload page."""
+    """Render the main page with upload and text input options."""
     return render_template('index.html')
 
 
@@ -45,6 +45,32 @@ def upload_file():
 
     except Exception as e:
         return jsonify({"message": f"Error processing file: {str(e)}"}), 500
+
+
+@app.route('/process_text', methods=['POST'])
+def process_text():
+    """Handle text input deduplication."""
+    try:
+        # Get the input text
+        text_data = request.form.get("text_data", "")
+        if not text_data.strip():
+            return jsonify({"message": "No text provided"}), 400
+
+        # Convert the text into a DataFrame, assuming it is CSV-like
+        data_io = io.StringIO(text_data)
+        df = pd.read_csv(data_io)
+
+        # Remove duplicates
+        cleaned_df = df.drop_duplicates()
+
+        # Convert back to CSV format
+        output = io.StringIO()
+        cleaned_df.to_csv(output, index=False)
+        output.seek(0)
+
+        return render_template('deduplicate_text.html', deduplicated_data=output.getvalue())
+    except Exception as e:
+        return jsonify({"message": f"Error processing text: {str(e)}"}), 500
 
 
 @app.route('/download/<filename>')

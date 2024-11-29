@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Processed</title>
+</head>
+<body>
+    <h1>Text Processed Successfully!</h1>
+    <textarea rows="10" cols="50" readonly>{{ deduplicated_data }}</textarea><br>
+    <a href="data:text/plain;charset=utf-8,{{ deduplicated_data | urlencode }}" download="deduplicated_data.csv">Download Text as CSV</a>
+</body>
+</html>

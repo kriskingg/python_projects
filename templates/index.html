@@ -6,10 +6,20 @@
     <title>Remove Duplicates</title>
 </head>
 <body>
-    <h1>Upload a CSV File to Remove Duplicates</h1>
+    <h1>Remove Duplicates</h1>
+
+    <!-- Upload File Section -->
+    <h2>Upload a CSV File</h2>
     <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".csv" required>
+        <input type="file" name="file" accept=".csv">
         <button type="submit">Upload and Process</button>
+    </form>
+
+    <!-- Text Input Section -->
+    <h2>Enter CSV Data Directly</h2>
+    <form action="/process_text" method="post">
+        <textarea name="text_data" rows="10" cols="50" placeholder="Paste your CSV data here..."></textarea><br>
+        <button type="submit">Process Text</button>
     </form>
 </body>
 </html>
