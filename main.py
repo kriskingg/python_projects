@@ -52,7 +52,7 @@ def process_text():
     """Handle text input deduplication."""
     try:
         # Get the input text
-        text_data = request.form.get("text_data", "")
+        text_data = request.form.get("text", "")
         if not text_data.strip():
             return jsonify({"message": "No text provided"}), 400
 
@@ -77,6 +77,18 @@ def process_text():
 def download_file(filename):
     """Serve the deduplicated file for download."""
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
+
+
+@app.route('/instructions')
+def instructions():
+    """Render the instructions page."""
+    return render_template('instructions.html')
+
+
+@app.route('/about')
+def about():
+    """Render the about page."""
+    return render_template('about.html')
 
 
 if __name__ == '__main__':
