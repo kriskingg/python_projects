@@ -1,9 +1,15 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 import pandas as pd
 import io
 
 app = Flask(__name__)
 
+# Root URL
+@app.route('/')
+def home():
+    return "Welcome to Remove Duplicates Service! Use the /remove_duplicates endpoint."
+
+# Remove duplicates endpoint
 @app.route('/remove_duplicates', methods=['POST'])
 def remove_duplicates():
     file = request.files['file']
