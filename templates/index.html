@@ -28,12 +28,13 @@
         <h1 class="text-center mb-4">Remove Duplicates</h1>
 
         <!-- Upload Section -->
-        <div class="card mb-5">
+        <div class="card mb-4">
             <div class="card-header bg-primary text-white">Upload a CSV File</div>
             <div class="card-body">
                 <form action="/upload" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <input type="file" name="file" class="form-control" required>
+                        <label for="file" class="form-label">Choose File:</label>
+                        <input type="file" name="file" class="form-control" id="file" required>
                     </div>
                     <button type="submit" class="btn btn-success">Upload and Process</button>
                 </form>
@@ -42,11 +43,12 @@
 
         <!-- Text Input Section -->
         <div class="card">
-            <div class="card-header bg-secondary text-white">Enter CSV Data Directly</div>
+            <div class="card-header bg-secondary text-white">Paste Text to Remove Duplicates</div>
             <div class="card-body">
                 <form action="/process_text" method="post">
                     <div class="mb-3">
-                        <textarea name="text" rows="6" class="form-control" placeholder="Paste your CSV data here..." required></textarea>
+                        <label for="text" class="form-label">Enter Text:</label>
+                        <textarea name="text" rows="6" class="form-control" id="text" placeholder="Paste your CSV data here..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-warning">Process Text</button>
                 </form>
@@ -55,7 +57,7 @@
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2024 Remove Duplicates Tool</p>
+        <p>&copy; 2024 Remove Duplicates Tool | <a href="/instructions" class="text-white">Instructions</a></p>
     </footer>
 
     <!-- Bootstrap JS -->
